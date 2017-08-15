@@ -24,19 +24,32 @@ class Config
         $this->iniFile = $iniConfig;
     }
 
+    /**
+     * @return array|bool
+     * @throws \Exception
+     */
     public function getConfig()
     {
         // Parse without sections
         $ini_array = parse_ini_file($this->iniFile, true);
+        if (empty($ini_array)) {
+            throw new \Exception(sprintf('The ini file was missing: %s', $this->iniFile));
+        }
         return $ini_array;
     }
 
+    /**
+     * @return mixed
+     */
     public function getEmailConfigs()
     {
         $config = $this->getConfig();
         return $config['email'];
     }
 
+    /**
+     * @return array
+     */
     public function getBizAdmins()
     {
         $config = $this->getConfig();
