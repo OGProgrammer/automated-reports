@@ -1,0 +1,13 @@
+{
+    "name": "ogprogrammer/automated-reports",
+    "type": "project",
+    "require": {
+        "fabpot/goutte": "^3.2"
+    },
+    "authors": [
+        {
+            "name": "Joshua Copeland",
+            "email": "joshuarcopeland@gmail.com"
+        }
+    ]
+}
