@@ -8,9 +8,13 @@ $targetSites = [
     'developer.research.com',
     'sites.research.com',
     'pt.research.com',
+    'cmt.research.com',
     '*.research.com',
     'research.com',
-    'www.research.com'
+    'www.research.com',
+    'vehiclehistory.com',
+    '*.vehiclehistory.com',
+    'www.vehiclehistory.com'
 ];
 
 require 'vendor/autoload.php';
@@ -23,7 +27,7 @@ $client = new Client();
 
 $subject = "Daily Indexed Pages Report - " . date('m/d/Y g:i a e') . PHP_EOL;
 $body = $subject;
-$body .= '<table style="width:100%"><tr><th>Site</th><th>Indexed Total</th></tr>';
+$body .= '<table style="width:100%; border: 1px #000;"><tr><th>Site</th><th>Indexed Total</th></tr>';
 
 foreach ($targetSites as $site) {
     $query = urlencode(sprintf("site:%s", $site));
